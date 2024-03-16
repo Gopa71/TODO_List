@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body %}
+<div class="div_i2 container-fluid ">
+    <div class="row">
+        <div class="col-lg-6 col-md-12 col-sm-12 bg-success">
+          <h3 class="divhd1">Add Your Tasks</h3>
+            <form action="" method="post">
+                          
+              {% csrf_token %} 
+                <div class="row mb-3">
+                  <label for="colFormLabel" class="col-sm-2 col-form-label"></label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" id="Task" name="task" placeholder="Task">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="colFormLabel" class="col-sm-2 col-form-label"></label>
+                  <div class="col-sm-10">
+                    <input type="number" class="form-control" id="Priority" name="priority" placeholder="Priority">
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="colFormLabel" class="col-sm-2 col-form-label"></label>
+                  <div class="col-sm-10">
+                    <input type="date" class="form-control" id="date" name="date" priority="Date">
+                    <button class="btn btn-primary justify-content-center mb-3 mt-3" type="submit">Done</button>
+                  </div>
+                </div>
+                
+              </form>
+              </div>
+              <div class="col-lg-6 col-md-12 col-sm-12  ">
+                <div class="border border-success m-3 border-5 ">
+                <div class="div_i3">
+                  <h1 >Tasks To Do</h1>
+                </div>
+              </div>
+                 {% for i in data %}
+                 <div class="border border-secondary m-3 border-5">
+                   
+                   <h2>Task : {{i.task}}</h2>
+                   <h3>Priority : {{i.priority}}</h3>
+                   <h4>Date : {{i.date}}</h4>
+                   <a href="{% url 'todo:update' i.id %}"><button class="btn btn-success" role="button">Update</button> </a>
+                   <a href="{% url 'todo:delete' i.id %}"><button class="btn btn-danger" role="button">Done</button> </a>
+                  </div>
+                 {% endfor %}
+              </div>
+    </div>
+</div> 
+  
+{% endblock %}

@@ -1,0 +1,30 @@
+.div_b1{display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 40%;
+    color: aliceblue;
+    
+}
+
+.div_b2{background-color: rgb(14, 52, 52);
+    width: auto;
+    height: 70px;
+}
+
+
+.div_d1{
+    justify-content: center;
+    position: absolute;
+    left:40%;
+    top: 40%;
+}
+.div_d2{padding-left:180px ;
+    margin-top: 50px;
+}
+.div_i2{margin-top: 80px;}
+.div_a1{margin-top: 80px;}
+.div_i3{text-align: center;}
+
+.divhd1{
+    padding-left: 350px;
+}
